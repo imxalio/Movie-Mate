@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import NavBar from './NavBar';
-import Search from './component/Search';
+import Search from './component/UI/Search';
 import TotalResults from './component/TotalResults';
 import MoviesList from './MoviesList';
-import Box from './component/Box';
-import Main from './component/Main';
+import Box from './component/UI/Box';
+import Main from './component/UI/Main';
 import WatchedList from './component/WatchedList';
 import SelectedMovie from './component/SelectedMovie';
 

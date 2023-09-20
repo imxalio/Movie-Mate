@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import AlertMessage from './UI/AlertMessage';
-import StarComponent from './StarComponent';
+import StarComponent from './UI/StarComponent';
 import { FaBackspace } from 'react-icons/fa';
 import Button from './UI/Button';
 

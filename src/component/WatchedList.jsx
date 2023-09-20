@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Button from './UI/Button';
 import { MdOutlineDelete } from 'react-icons/md';
 
