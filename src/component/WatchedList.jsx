@@ -15,7 +15,8 @@ const WatchedList = ({ myWatchedList, setWatchedList }) => {
     for (let i = 0; i < arr.length; i++) {
       acc += arr[i];
     }
-    return acc / arr.length;
+    const ave = (acc / arr.length).toFixed(2);
+    return ave;
   }
 
   const allTime = (arr) => {
@@ -23,7 +24,8 @@ const WatchedList = ({ myWatchedList, setWatchedList }) => {
     for (let i = 0; i < arr.length; i++) {
       acc += arr[i];
     }
-    return acc;
+    const ave = acc.toFixed(2);
+    return ave;
   };
 
   const imdbRating = myWatchedList.map((movie) => parseFloat(movie.imdbRating));
@@ -42,8 +44,10 @@ const WatchedList = ({ myWatchedList, setWatchedList }) => {
         </h1>
         <div className="flex gap-3 text-xl">
           <h2>🎞️ {myWatchedList.length} movies</h2>
-          <h2>⭐️ {averageImdbRating || '0'}</h2>
-          <h2>🌟 {averageMyRating || '0'}</h2>
+          <h2>
+            ⭐️ {(averageImdbRating !== 'NaN' && averageImdbRating) || '0'}
+          </h2>
+          <h2>🌟 {(averageMyRating !== 'NaN' && averageMyRating) || '0'}</h2>
           <h2>⌛️ {watchingTime || '0'} min</h2>
         </div>
       </div>
@@ -59,7 +63,9 @@ const WatchedList = ({ myWatchedList, setWatchedList }) => {
               <h1 className="col-span-3 text-xl font-bold">{movie.Title}</h1>
               <h3 className="text-lg">⭐️ {movie.imdbRating}</h3>
               <h3 className="text-lg">🌟 {movie.myRating}</h3>
-              <h3 className="text-lg">⌛️ {movie.Runtime}</h3>
+              <h3 className="text-lg">
+                ⌛️{movie.Runtime === 0 ? 'N/A' : `${movie.Runtime}`}
+              </h3>
             </div>
             <Button
               onClick={() => handleDeleteMovie(movie)}

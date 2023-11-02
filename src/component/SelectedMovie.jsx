@@ -53,6 +53,17 @@ const SelectedMovie = ({
 
     if (itemExists) {
       setMovieId(null);
+    } else if (Runtime === 'N/A') {
+      const newMovieInfo = {
+        Title,
+        imdbRating,
+        Runtime: 0,
+        myRating,
+        imdbID,
+        Poster,
+      };
+      setWatchedList((current) => [...current, newMovieInfo]);
+      setMovieId(null);
     } else {
       const newMovieInfo = {
         Title,
